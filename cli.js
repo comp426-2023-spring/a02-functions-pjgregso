@@ -29,7 +29,6 @@ let longitude = undefined;
 let timezone = moment.tz.guess();
 
 
-
 if ("n" in args){
     latitude = args["n"];
 } else if ("s" in args){
@@ -42,15 +41,7 @@ if ("e" in args){
     longitude = -args["w"];
 }
 
-if (latitude === undefined || Math.abs(latitude) > 90){
-    console.log("Please put a valid latitude");
-    process.exit(1);
-} 
 
-if (longitude === undefined || Math.abs(longitude) > 180){
-    console.log("Please put a valid longitude");
-    process.exit(1);
-}
 
 if ("t" in args){
     timezone = args["t"];
