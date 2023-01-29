@@ -41,12 +41,12 @@ if ("e" in args){
     longitude = -args["w"];
 }
 
-if (Math.abs(latitude)>90){
+if (latitude === undefined || Math.abs(latitude) > 90){
     console.log("Please put a valid latitude in");
     process.exit(0);
 } 
 
-if (Math.abs(longitude)>180){
+if (longitude === undefined || Math.abs(longitude) > 180){
     console.log("Please put a valid longitude");
     process.exit(0);
 }
