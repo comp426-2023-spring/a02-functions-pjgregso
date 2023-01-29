@@ -5,10 +5,8 @@ import moment from "moment-timezone";
 import minimist from "minimist";
 import fetch from "node-fetch";
 
-// Use minimist process command line arguments
 const args = minimist(process.argv.slice(2));
 
-// Handle help command
 if("h" in args) {
     console.log(
 
@@ -40,28 +38,26 @@ if("e" in args) {
     longitude = -args["w"];
 }
 
-// Check to ensure that latitude and longitude are in the valid range
 if(latitude === undefined || Math.abs(latitude) > 90) {
-    console.log("Latitude must be in range");
+    console.log("Latitude must be in valid range");
     process.exit(0);
 }
 if(longitude === undefined || Math.abs(longitude) > 180) {
-    console.log("Longitude must be in range");
+    console.log("Longitude must be in valid range");
     process.exit(0);
 }
-let timezone = moment.tz.guess();
 
+//timezone
+let timezone = moment.tz.guess();
 if("t" in args) {
     timezone = args["t"];    
 }
 
-
-
-// Make request to the API
+// Make request to API
 const request_url = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&daily=precipitation_hours&current_weather=true&timezone=" + timezone;
 const response = await fetch(request_url);
 
-// Get the data from the request
+// await JSON data
 const data = await response.json();
 
 if("j" in args) {
@@ -77,4 +73,8 @@ if (days == 0) {
     console.log("At location (" + latitude + ", " + longitude + "), it will rain " + data["daily"]["precipitation_hours"][0] + " hours in " + days + " days.\n");
 } else {
     console.log("At location (" + latitude + ", " + longitude + "), it will rain " + data["daily"]["precipitation_hours"][0] + " hours tomorrow.\n");
+}
+
+if (data["daily"]["precipitation_hours"][0] > 3){
+    console.log("Where a raincoat, not your babahanoushes.");
 }
