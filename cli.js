@@ -76,5 +76,5 @@ if (days == 0) {
 }
 
 if (data["daily"]["precipitation_hours"][0] > 3){
-    console.log("Where a raincoat, not your babahanoushes.");
+    console.log("Wear a raincoat, not your babaGANOSHes.");
 }
