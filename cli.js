@@ -66,6 +66,8 @@ if("j" in args) {
     process.exit(0);
 }
 
+
+
 //Days
 
 if (days == 0) {
