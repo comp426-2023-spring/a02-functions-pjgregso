@@ -1,0 +1,28 @@
+{
+  "name": "weather",
+  "version": "0.0.1",
+  "description": "weather app for ganoshes",
+  "main": "index.js",
+  "scripts": {
+    "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2023-spring/a02-functions-pjgregso.git"
+  },
+  "author": "@pjgregso",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2023-spring/a02-functions-pjgregso/issues"
+  },
+  "homepage": "https://github.com/comp426-2023-spring/a02-functions-pjgregso#readme",
+  "dependencies": {
+    "minimist": "^1.2.7",
+    "moment-timezone": "^0.5.40",
+    "node-fetch": "^3.3.0"
+  },
+  "bin": {
+    "galosh.js": "./cli.js"
+  },
+  "type": "module"
+}
