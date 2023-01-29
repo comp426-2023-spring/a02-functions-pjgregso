@@ -39,11 +39,11 @@ if("e" in args) {
 }
 
 if(latitude === undefined || Math.abs(latitude) > 90) {
-    console.log("Latitude must be in valid range");
+    console.log("Latitude must be in range");
     process.exit(0);
 }
 if(longitude === undefined || Math.abs(longitude) > 180) {
-    console.log("Longitude must be in valid range");
+    console.log("Longitude must be in range");
     process.exit(0);
 }
 
@@ -68,11 +68,11 @@ if("j" in args) {
 const days = args["d"];
 
 if (days == 0) {
-    console.log("At location (" + latitude + ", " + longitude + "), it will rain " + data["daily"]["precipitation_hours"][0] + " hours today.\n");
+    console.log("At coordinates: (" + latitude + ", " + longitude + "), it should rain " + data["daily"]["precipitation_hours"][0] + " hours today.\n");
 } else if (days > 1) {
-    console.log("At location (" + latitude + ", " + longitude + "), it will rain " + data["daily"]["precipitation_hours"][0] + " hours in " + days + " days.\n");
+    console.log("At coordinates: (" + latitude + ", " + longitude + "), it should rain " + data["daily"]["precipitation_hours"][0] + " hours in " + days + " days.\n");
 } else {
-    console.log("At location (" + latitude + ", " + longitude + "), it will rain " + data["daily"]["precipitation_hours"][0] + " hours tomorrow.\n");
+    console.log("At at coordinates: (" + latitude + ", " + longitude + "), it should rain " + data["daily"]["precipitation_hours"][0] + " hours tomorrow.\n");
 }
 
 if (data["daily"]["precipitation_hours"][0] > 3){
