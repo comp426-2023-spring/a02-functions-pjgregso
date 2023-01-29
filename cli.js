@@ -27,7 +27,8 @@ Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE
 let latitude = undefined;
 let longitude = undefined;
 let timezone = moment.tz.guess();
-const days = args["d"];
+
+
 
 if ("n" in args){
     latitude = args["n"];
@@ -42,13 +43,13 @@ if ("e" in args){
 }
 
 if (latitude === undefined || Math.abs(latitude) > 90){
-    console.log("Please put a valid latitude in");
-    process.exit(0);
+    console.log("Please put a valid latitude");
+    process.exit(1);
 } 
 
 if (longitude === undefined || Math.abs(longitude) > 180){
     console.log("Please put a valid longitude");
-    process.exit(0);
+    process.exit(1);
 }
 
 if ("t" in args){
@@ -65,11 +66,8 @@ if("j" in args) {
     console.log(data);
     process.exit(0);
 }
-
-
-
+const days = args["d"];
 //Days
-
 if (days == 0) {
     console.log("At coordinates: (" + latitude + ", " + longitude + "), it will rain " + data["daily"]["precipitation_hours"][0] + " hours today.`\n");
 } else if (days > 1) {
