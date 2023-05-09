@@ -12,7 +12,7 @@ if("h" in args) {
 
 `
 Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE
--h            Show this help message and exit.   
+-h            Show this help message and exit.
 -n, -s        Latitude: N positive; S negative.  
 -e, -w        Longitude: E positive; W negative.
 -z            Time zone: uses tz.guess() from moment-timezone by default.
