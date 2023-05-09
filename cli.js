@@ -11,7 +11,6 @@ if("h" in args) {
     console.log(
 
 `
-
 Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE
 -h            Show this help message and exit.
 -n, -s        Latitude: N positive; S negative.
